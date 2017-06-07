@@ -23,7 +23,7 @@ public class CircleComponent extends JComponent {
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.RED);
 		g.fillOval(x, y, width, height);
 	}
 	
