@@ -24,7 +24,14 @@ public class GenerateCircle {
 		
 		while (x >= y) { //When the x=y then we are at a 45º angle from the origin
 			
-			coordinates.add(new Point(x0+x, y0+y)); //= coordinates + "(" + (x0 + x) + "," + (y0 + y) + ")\n";
+			coordinates.add(new Point(x + x0, -y + y0)); //octant 1
+			coordinates.add(new Point(y + x0, -x + y0)); //octant 2
+			coordinates.add(new Point(-y + x0, -x + y0)); //octant 3
+			coordinates.add(new Point(-x + x0, -y + y0)); //octant 4
+			coordinates.add(new Point(-x + x0, y + y0)); //octant 5
+			coordinates.add(new Point(-y + x0, x + y0)); //octant 6
+			coordinates.add(new Point(y + x0, x + y0)); //octant 7
+			coordinates.add(new Point(x + x0, y + y0)); //octant 8
 			
 			y += 1; //y increments by 1 every time no matter what
 			if (err <= 0) {
