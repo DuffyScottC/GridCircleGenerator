@@ -10,7 +10,7 @@ public class main {
 		
 //		System.out.println(GenerateCircle.generate(0, 0, 11));
 		
-	    JFrame frame = new PixelCircleFrame(225, 225);
+	    JFrame frame = new PixelCircleFrame(225, 225, 50); //(x-coord of center, y-coord of center, radius) of a circle
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
 	    

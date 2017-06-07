@@ -44,7 +44,7 @@ public class GenerateCircle {
 			
 		}
 		for(int i = 0; i < coordinates.size(); i++) {
-			System.out.println("(" + (coordinates.get(i).getX()-100) + "," + (coordinates.get(i).getY()-100) + ")");
+			System.out.println("(" + (coordinates.get(i).getX()-250) + "," + (coordinates.get(i).getY()-250) + ")");
 		}
 		return coordinates;
 	}

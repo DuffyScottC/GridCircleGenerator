@@ -18,7 +18,7 @@ public class PixelCircleComponent extends JComponent {
 	 * Creates a new circle object
 	 * @param newX - x-coord of center
 	 * @param newY - y coord of center
-	 * @param newR - raduis of circle
+	 * @param newR - radius of circle
 	 */
 	public PixelCircleComponent (int newX, int newY, int newR) {
 		x = newX;
@@ -26,6 +26,10 @@ public class PixelCircleComponent extends JComponent {
 		radius = newR;
 	}
 	
+	/**
+	 * This function uses the GenerateCircle object's generate() method to generate a graphical 
+	 * representation of a rasterize circle
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.RED);
@@ -33,7 +37,6 @@ public class PixelCircleComponent extends JComponent {
 		for (int i = 0; i < coordinates.size(); i++) { //Keep adding rectangles while there are still coordinates in the array
 			g.fillRect(coordinates.get(i).x, coordinates.get(i).y, 1, 1); //Add a new rectangle to represent those coordinates
 		}
-		
 	}
 	
 	@Override

@@ -14,10 +14,22 @@ public class PixelCircleFrame extends JFrame {
 	private static final int FRAME_WIDTH = 550;
 	private static final int FRAME_HEIGHT = 550;
 	
-//	private CircleComponent circle;
-	private PixelCircleComponent pixelCircle;
+	private int x; //The x-coordinate of the center of the circle
+	private int y; //The y-coordinate of the center of the circle
+	private int radius; //The radius of the circle
+	private PixelCircleComponent pixelCircle; //The JComponent object that draws the circle
 	
-	public PixelCircleFrame (int x, int y) {
+	/**
+	 * 
+	 * @param newX - The x-coordinate of the center of the circle
+	 * @param newY - The y-coordinate of the center of the circle
+	 * @param newR - The radius of the circle
+	 */
+	public PixelCircleFrame (int newX, int newY, int newR) {
+		x = newX;
+		y = newY;
+		radius = newR;
+		
 		
 		createPixelCircle();
 		add(pixelCircle);
@@ -29,11 +41,7 @@ public class PixelCircleFrame extends JFrame {
 	}
 	
 	private void createPixelCircle() {
-		pixelCircle = new PixelCircleComponent(100, 100, 11);
+		pixelCircle = new PixelCircleComponent(x, y, radius);
 	}
-	
-//	private void createCircle() {
-//		circle = new CircleComponent((FRAME_WIDTH/2)-35, (FRAME_HEIGHT/2)-35, 70, 70);
-//	}
 	
 }
