@@ -24,7 +24,7 @@ public class CircleComponent extends JComponent {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.YELLOW);
-		g.fillOval(0, 0, width, height);
+		g.fillOval(x, y, width, height);
 	}
 	
 	@Override
@@ -34,6 +34,6 @@ public class CircleComponent extends JComponent {
 	
 	@Override
 	public Point getLocation () {
-		return new Point(0,0);
+		return new Point(x,y);
 	}
 }
