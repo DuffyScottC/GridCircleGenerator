@@ -32,8 +32,8 @@ public class CircleComponent extends JComponent {
 		return new Dimension(width, height);
 	}
 	
-	@Override
-	public Point getLocation () {
-		return new Point(x,y);
-	}
+//	@Override
+//	public Point getLocation () {
+//		return new Point(x,y);
+//	}
 }

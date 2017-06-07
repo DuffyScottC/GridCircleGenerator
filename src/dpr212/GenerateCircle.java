@@ -1,5 +1,8 @@
 package dpr212;
 
+import java.awt.Point;
+import java.util.ArrayList;
+
 /**
  * Generates the coordinates of a pixel circle
  * @author Scott
@@ -13,15 +16,15 @@ public class GenerateCircle {
 	 * @param radius - the radius of the circle
 	 * @return a string containing a list of all the coordinates of the first octant
 	 */
-	public static String generate(int x0, int y0, int radius) {
+	public static ArrayList<Point> generate(int x0, int y0, int radius) {
 		int x = radius; //The x-coordinate of the pixel being drawn
 		int y = 0; //The y-coordinate of the pixel being drawn
 		int err = 1 - x;
-		String result = "";
+		ArrayList<Point> coordinates = new ArrayList(); //This ArrayList will hold all the points of the circle
 		
 		while (x >= y) { //When the x=y then we are at a 45º angle from the origin
 			
-			result = result + "(" + (x0 + x) + "," + (y0 + y) + ")\n";
+			coordinates.add(new Point(x0+x, y0+y)); //= coordinates + "(" + (x0 + x) + "," + (y0 + y) + ")\n";
 			
 			y += 1; //y increments by 1 every time no matter what
 			if (err <= 0) {
@@ -33,7 +36,10 @@ public class GenerateCircle {
 			
 			
 		}
-		return result;
+		for(int i = 0; i < coordinates.size(); i++) {
+			System.out.println("(" + (coordinates.get(i).getX()-100) + "," + (coordinates.get(i).getY()-100) + ")");
+		}
+		return coordinates;
 	}
 	
 }

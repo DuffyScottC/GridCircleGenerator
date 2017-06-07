@@ -14,35 +14,26 @@ public class PixelCircleFrame extends JFrame {
 	private static final int FRAME_WIDTH = 550;
 	private static final int FRAME_HEIGHT = 550;
 	
-//	private JPanel panel;
-//	private JLabel testLabel;
-	private CircleComponent circle;
+//	private CircleComponent circle;
+	private PixelCircleComponent pixelCircle;
 	
 	public PixelCircleFrame (int x, int y) {
 		
-		createCircle();
-		add(circle);
-//		createTestLabel(x, y);
+		createPixelCircle();
+		add(pixelCircle);
 		
-//		createPanel();
+//		createCircle();
+//		add(circle);
 		
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
 	
-	private void createCircle() {
-		circle = new CircleComponent((FRAME_WIDTH/2)-35, (FRAME_HEIGHT/2)-35, 70, 70);
+	private void createPixelCircle() {
+		pixelCircle = new PixelCircleComponent(100, 100, 11);
 	}
-//	
-//	private void createTestLabel(int x, int y) {
-//		testLabel = new JLabel("Circle with center (" + x + "," + y + ")");
+	
+//	private void createCircle() {
+//		circle = new CircleComponent((FRAME_WIDTH/2)-35, (FRAME_HEIGHT/2)-35, 70, 70);
 //	}
-//	
-//	private void createPanel()
-//	   {
-//	      panel = new JPanel();
-//	      panel.add(testLabel);
-//	      panel.add(circle);
-//	      add(panel);
-//	   } 
 	
 }

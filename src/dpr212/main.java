@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class main {
 	public static void main(String[] args) {
 		
-		System.out.println(GenerateCircle.generate(0, 0, 11));
+//		System.out.println(GenerateCircle.generate(0, 0, 11));
 		
 	    JFrame frame = new PixelCircleFrame(225, 225);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
