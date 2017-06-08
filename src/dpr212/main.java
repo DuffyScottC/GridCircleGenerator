@@ -8,12 +8,12 @@ import javax.swing.JFrame;
 public class main {
 	public static void main(String[] args) {
 		
-		System.out.println(GenerateCircle.generate(0, 0, 11));
+		int xCoordCent = 100;
+		int yCoordCent = 100;
+		int radius = 50;
 		
-	    JFrame frame = new PixelCircleFrame(225, 225);
+	    JFrame frame = new PixelCircleFrame(xCoordCent, yCoordCent, radius);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    
-	    
 	    frame.setVisible(true);
 	 }
 }

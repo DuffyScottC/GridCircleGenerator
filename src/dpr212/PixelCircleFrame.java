@@ -1,7 +1,9 @@
 package dpr212;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
+import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,34 +16,34 @@ public class PixelCircleFrame extends JFrame {
 	private static final int FRAME_WIDTH = 550;
 	private static final int FRAME_HEIGHT = 550;
 	
-	private JPanel panel;
-	private JLabel testLabel;
-	private CircleComponent circle;
+	private int x; //The x-coordinate of the center of the circle
+	private int y; //The y-coordinate of the center of the circle
+	private int radius; //The radius of the circle
+	private PixelCircleComponent pixelCircle; //The JComponent object that draws the circle
+
 	
-	public PixelCircleFrame (int x, int y) {
+	/**
+	 * 
+	 * @param newX - The x-coordinate of the center of the circle
+	 * @param newY - The y-coordinate of the center of the circle
+	 * @param newR - The radius of the circle
+	 */
+	public PixelCircleFrame (int newX, int newY, int newR) {
+		x = newX;
+		y = newY;
+		radius = newR;
 		
-		createCircle();
-		createTestLabel(x, y);
+		createPixelCircle();
 		
-		createPanel();
+		add(pixelCircle);
 		
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
 	
-	private void createCircle() {
-		circle = new CircleComponent(0, 0, 50, 50);
-	}
 	
-	private void createTestLabel(int x, int y) {
-		testLabel = new JLabel("Circle with center (" + x + "," + y + ")");
-	}
 	
-	private void createPanel()
-	   {
-	      panel = new JPanel();
-	      panel.add(testLabel);
-	      panel.add(circle);
-	      add(panel);
-	   } 
+	private void createPixelCircle() {
+		pixelCircle = new PixelCircleComponent(x, y, radius);
+	}
 	
 }
