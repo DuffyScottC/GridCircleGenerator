@@ -14,7 +14,6 @@ public class main {
 		
 	    JFrame frame = new PixelCircleFrame(xCoordCent, yCoordCent, radius);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//	    frame.pack();
 	    frame.setVisible(true);
 	 }
 }
