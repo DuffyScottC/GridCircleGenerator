@@ -4,11 +4,13 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 /**
- * Generates the coordinates of a pixel circle
+ * Generates the coordinates of a circle on a grid where each grid square is 10x10 pixels. 
  * @author Scott
  *
  */
 public class GenerateCircle {
+	public static final int SQUARE = 10; //The size of each grid square
+	
 	/**
 	 * 
 	 * @param x0 - x-coordinate of center of circle
