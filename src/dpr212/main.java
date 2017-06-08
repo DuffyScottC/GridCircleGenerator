@@ -18,21 +18,27 @@ public class main {
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.setVisible(true);
 	    
-	    //Horozontal xz-plane functional
-//	    for (int i = 62; i <= 66; i++) {
-//	    	Minecraft.cirAbsCoordXZ(959, i, 732, 7, "wool 3");
-//	    }
-	    //yz-plane functional
-//	    for (int i = 957; i <= 961; i++) {
-//	    	Minecraft.cirAbsCoordYZ(i, 64, 732, 7, "wool 3");
-//	    }
-	    //xy-plane
-//	    for (int i = 730; i <= 734; i++) {
-//	    	Minecraft.cirAbsCoordXY(959, 64, i, 7, "wool 3");
-//	    }
+	    testMine();
 	    
 	    
 	 }
+	
+	private static void testMine() {
+		//xz-plane
+	    for (int i = 62; i <= 66; i++) {
+	    	Minecraft.holCirAbsCoordXZ(959, i, 732, 7, "wool 3");
+	    }
+	    //yz-plane
+	    System.out.println("");
+	    for (int i = 957; i <= 961; i++) {
+	    	Minecraft.holCirAbsCoordYZ(i, 64, 732, 7, "wool 3");
+	    }
+	    //xy-plane
+	    System.out.println("");
+	    for (int i = 730; i <= 734; i++) {
+	    	Minecraft.holCirAbsCoordXY(959, 64, i, 7, "wool 3");
+	    }
+	}
 	
 	
 }
