@@ -28,7 +28,7 @@ public class PixelCircleComponent extends JComponent {
 	public PixelCircleComponent (int newX, int newY, int newR) {
 		x = newX;
 		y = newY;
-		radius = newR*GenerateCircle.SQUARE; //This is multiplied by SQUARE to keep the scale of the rasterized circle
+		radius = newR;//GenerateCircle.SQUARE; //This is multiplied by SQUARE to keep the scale of the rasterized circle
 	}
 	
 	/**
@@ -39,12 +39,15 @@ public class PixelCircleComponent extends JComponent {
 	public void paintComponent(Graphics g) {
 		coordinates = GenerateCircle.generate(x, y, radius); //Calculate the coordinates of the circle's pixels and put them in an array
 		for (int i = 0; i < coordinates.size(); i++) { //Keep adding rectangles while there are still coordinates in the array
-			int xCoord = coordinates.get(i).x;
-			int yCoord = coordinates.get(i).y;
+			//Convert the coordinates found in generate() to appropriately sized squares
+			int xCoord = (coordinates.get(i).x - x)*GenerateCircle.SQUARE + x;
+			int yCoord = (coordinates.get(i).y - y)*GenerateCircle.SQUARE + y;
 			g.setColor(Color.RED);
-			g.fillRect(xCoord, yCoord, GenerateCircle.SQUARE, GenerateCircle.SQUARE); //Add a new rectangle to represent those coordinates
+			//Add a new rectangle to represent those coordinates
+			g.fillRect(xCoord, yCoord, GenerateCircle.SQUARE, GenerateCircle.SQUARE);
 			g.setColor(Color.LIGHT_GRAY);
-			g.drawRect(xCoord, yCoord, GenerateCircle.SQUARE, GenerateCircle.SQUARE); //Put a boarder around the pixels
+			//Put a boarder around the pixels
+			g.drawRect(xCoord, yCoord, GenerateCircle.SQUARE, GenerateCircle.SQUARE);
 		}
 	}
 	

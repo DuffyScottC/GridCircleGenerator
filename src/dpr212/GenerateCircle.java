@@ -36,19 +36,19 @@ public class GenerateCircle {
 			coordinates.add(new Point(y + x0, x + y0)); //octant 7
 			coordinates.add(new Point(x + x0, y + y0)); //octant 8
 			
-			y += SQUARE; //y increments by 1 every time no matter what
+			y += 1; //y increments by 1 every time no matter what
 			if (err <= 0) {
 				err += 2*y + 1;
 			} else { //err > 0
-				x -= SQUARE; //x decrements only sometimes (when the errer is greater than 0)
+				x -= 1; //x decrements only sometimes (when the error is greater than 0)
 	            err += 2*(y - x) + 1;
 			}
 			
 			
 		}
-		for(int i = 0; i < coordinates.size(); i++) {
-			System.out.println("(" + (coordinates.get(i).getX()-x0)/SQUARE + "," + (coordinates.get(i).getY()-y0)/SQUARE + ")");
-		}
+//		for(int i = 0; i < coordinates.size(); i++) {
+//			System.out.println("(" + (coordinates.get(i).getX()-x0) + "," + (coordinates.get(i).getY()-y0) + ")");
+//		}
 		return coordinates;
 	}
 	

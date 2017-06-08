@@ -1,5 +1,7 @@
 package dpr212;
 
+import java.awt.Point;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -15,5 +17,22 @@ public class main {
 	    JFrame frame = new PixelCircleFrame(xCoordCent, yCoordCent, radius);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.setVisible(true);
+	    
+	    //Horozontal xz-plane functional
+//	    for (int i = 62; i <= 66; i++) {
+//	    	Minecraft.cirAbsCoordXZ(959, i, 732, 7, "wool 3");
+//	    }
+	    //yz-plane functional
+//	    for (int i = 957; i <= 961; i++) {
+//	    	Minecraft.cirAbsCoordYZ(i, 64, 732, 7, "wool 3");
+//	    }
+	    //xy-plane
+//	    for (int i = 730; i <= 734; i++) {
+//	    	Minecraft.cirAbsCoordXY(959, 64, i, 7, "wool 3");
+//	    }
+	    
+	    
 	 }
+	
+	
 }
