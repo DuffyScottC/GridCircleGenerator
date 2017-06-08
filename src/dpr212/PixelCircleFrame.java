@@ -1,7 +1,9 @@
 package dpr212;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
+import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,6 +20,7 @@ public class PixelCircleFrame extends JFrame {
 	private int y; //The y-coordinate of the center of the circle
 	private int radius; //The radius of the circle
 	private PixelCircleComponent pixelCircle; //The JComponent object that draws the circle
+
 	
 	/**
 	 * 
@@ -30,15 +33,14 @@ public class PixelCircleFrame extends JFrame {
 		y = newY;
 		radius = newR;
 		
-		
 		createPixelCircle();
-		add(pixelCircle);
 		
-//		createCircle();
-//		add(circle);
+		add(pixelCircle);
 		
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
+	
+	
 	
 	private void createPixelCircle() {
 		pixelCircle = new PixelCircleComponent(x, y, radius);
