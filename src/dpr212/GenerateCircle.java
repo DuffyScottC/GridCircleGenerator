@@ -12,6 +12,7 @@ public class GenerateCircle {
 	public static final int SQUARE = 10; //The size of each grid square
 	
 	/**
+	 * This function generates a set of coordinates of the circle's pixels. 
 	 * 
 	 * @param x0 - x-coordinate of center of circle
 	 * @param y0 - y-coordinate of center of circle
@@ -35,18 +36,18 @@ public class GenerateCircle {
 			coordinates.add(new Point(y + x0, x + y0)); //octant 7
 			coordinates.add(new Point(x + x0, y + y0)); //octant 8
 			
-			y += 1; //y increments by 1 every time no matter what
+			y += SQUARE; //y increments by 1 every time no matter what
 			if (err <= 0) {
 				err += 2*y + 1;
 			} else { //err > 0
-				x -= 1;
+				x -= SQUARE; //x decrements only sometimes (when the errer is greater than 0)
 	            err += 2*(y - x) + 1;
 			}
 			
 			
 		}
 		for(int i = 0; i < coordinates.size(); i++) {
-			System.out.println("(" + (coordinates.get(i).getX()-x0) + "," + (coordinates.get(i).getY()-y0) + ")");
+			System.out.println("(" + (coordinates.get(i).getX()-x0)/SQUARE + "," + (coordinates.get(i).getY()-y0)/SQUARE + ")");
 		}
 		return coordinates;
 	}
