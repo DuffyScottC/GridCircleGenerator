@@ -19,7 +19,7 @@ public class GenerateCircle {
 	 * @param radius - the radius of the circle
 	 * @return a string containing a list of all the coordinates of the first octant
 	 */
-	public static ArrayList<Point> generate(int x0, int y0, int radius) {
+	public static ArrayList<Point> generateHollowCircle(int x0, int y0, int radius) {
 		int x = radius; //The x-coordinate of the pixel being drawn
 		int y = 0; //The y-coordinate of the pixel being drawn
 		int err = 1 - x;
@@ -52,6 +52,35 @@ public class GenerateCircle {
 		return coordinates;
 	}
 	
-	
+	/**
+	 * This function gives the size of the base of the circle in Minecraft. (That number + 1) can be added to x, y, and z 
+	 * to get the coordinates of the first corner origin point, from which we will generate a corner plane. Also, that number
+	 * can be used to calculate how thick the three rings should be by adding and subtracting the base size
+	 * from the origin's x, y and z coordinates. 
+	 * 
+	 * @param radius - the radius of the circle
+	 * @return the base size
+	 */
+	public static int getBaseSize(int radius) {
+		boolean stop = false;
+		int y = 0; //The y-coordinate of the pixel being drawn
+		int err = 1 - radius;
+		int baseSize = 0; //This holds the 1/2 the size of the base section of the sphere/circle - 1. That number is used
+		//to calculate how thick of each ring should be, and where the origin for the corner planes should be
+		
+		while (stop == false) {
+			baseSize++; //Every time there is a new gridpoint, we add to the count
+			y += 1; //y increments by 1 every time no matter what
+			if (err <= 0) {
+				err += 2*y + 1;
+			} else { //err > 0
+				stop = true;
+			}
+			
+			
+		}
+		
+		return baseSize-1;
+	}
 	
 }

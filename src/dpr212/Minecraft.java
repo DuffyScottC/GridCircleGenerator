@@ -4,8 +4,9 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public class Minecraft {
+	
 	/**
-	 * Minecraft circle from absolute coordinates of center along the xz-plane
+	 * Minecraft hollow circle from absolute coordinates of center along the xz-plane
 	 * @param xCent - The x-coord of the center of the circle
 	 * @param yCent - The y-coord of the center of the circle
 	 * @param zCent - The z-coord of the center of the circle
@@ -13,17 +14,37 @@ public class Minecraft {
 	 * @param blockType - The type of block the circle should be made of
 	 */
 	public static void holCirAbsCoordXZ(int xCent, int yCent, int zCent, int radius, String blockType) {
-		ArrayList<Point> coords = GenerateCircle.generate(xCent, zCent, radius);
+		ArrayList<Point> coords = GenerateCircle.generateHollowCircle(xCent, zCent, radius);
 		
 		//Print the commands to the screen
 		for (int i = 0; i < coords.size(); i++) {
 			System.out.println("setblock " + coords.get(i).x + " " + yCent + " " + coords.get(i).y + " minecraft:" + blockType);
+//			System.out.println("fill " + xCent + " " + yCent + " " + zCent + " " + coords.get(i).x + " " + yCent + " " + coords.get(i).y + " minecraft:" + blockType);
 		}
 		
 	}
 	
 	/**
-	 * Minecraft circle from absolute coordinates of center along the yz-plane
+	 * Minecraft filled circle from absolute coordinates of center along the xz-plane
+	 * @param xCent - The x-coord of the center of the circle
+	 * @param yCent - The y-coord of the center of the circle
+	 * @param zCent - The z-coord of the center of the circle
+	 * @param radius - the radius of the circle
+	 * @param blockType - The type of block the circle should be made of
+	 */
+	public static void filCirAbsCoordXZ(int xCent, int yCent, int zCent, int radius, String blockType) {
+		ArrayList<Point> coords = GenerateCircle.generateHollowCircle(xCent, zCent, radius);
+		
+		//Print the commands to the screen
+		for (int i = 0; i < coords.size(); i++) {
+			System.out.println("fill " + xCent + " " + yCent + " " + zCent 
+					+ " " + coords.get(i).x + " " + yCent + " " + coords.get(i).y + " minecraft:" + blockType + " replace minecraft:air");
+		}
+		
+	}
+	
+	/**
+	 * Minecraft hollow circle from absolute coordinates of center along the yz-plane
 	 * @param xCent - The x-coord of the center of the circle
 	 * @param yCent - The y-coord of the center of the circle
 	 * @param zCent - The z-coord of the center of the circle
@@ -31,7 +52,7 @@ public class Minecraft {
 	 * @param blockType - The type of block the circle should be made of
 	 */
 	public static void holCirAbsCoordYZ(int xCent, int yCent, int zCent, int radius, String blockType) {
-		ArrayList<Point> coords = GenerateCircle.generate(zCent, yCent, radius);
+		ArrayList<Point> coords = GenerateCircle.generateHollowCircle(zCent, yCent, radius);
 		
 		//Print the commands to the screen
 		for (int i = 0; i < coords.size(); i++) {
@@ -41,7 +62,26 @@ public class Minecraft {
 	}
 	
 	/**
-	 * Minecraft circle from absolute coordinates of center along the xy-plane
+	 * Minecraft filled circle from absolute coordinates of center along the yz-plane
+	 * @param xCent - The x-coord of the center of the circle
+	 * @param yCent - The y-coord of the center of the circle
+	 * @param zCent - The z-coord of the center of the circle
+	 * @param radius - the radius of the circle
+	 * @param blockType - The type of block the circle should be made of
+	 */
+	public static void filCirAbsCoordYZ(int xCent, int yCent, int zCent, int radius, String blockType) {
+		ArrayList<Point> coords = GenerateCircle.generateHollowCircle(zCent, yCent, radius);
+		
+		//Print the commands to the screen
+		for (int i = 0; i < coords.size(); i++) {
+			System.out.println("fill " + xCent + " " + yCent + " " + zCent
+					+ " " + xCent + " " + coords.get(i).y + " " + coords.get(i).x + " minecraft:" + blockType + " replace minecraft:air");
+		}
+		
+	}
+	
+	/**
+	 * Minecraft hollow circle from absolute coordinates of center along the xy-plane
 	 * @param xCent - The x-coord of the center of the circle
 	 * @param yCent - The y-coord of the center of the circle
 	 * @param zCent - The z-coord of the center of the circle
@@ -49,11 +89,30 @@ public class Minecraft {
 	 * @param blockType - The type of block the circle should be made of
 	 */
 	public static void holCirAbsCoordXY(int xCent, int yCent, int zCent, int radius, String blockType) {
-		ArrayList<Point> coords = GenerateCircle.generate(xCent, yCent, radius);
+		ArrayList<Point> coords = GenerateCircle.generateHollowCircle(xCent, yCent, radius);
 		
 		//Print the commands to the screen
 		for (int i = 0; i < coords.size(); i++) {
 			System.out.println("setblock " + coords.get(i).x + " " + coords.get(i).y + " " + zCent + " minecraft:" + blockType);
+		}
+		
+	}
+	
+	/**
+	 * Minecraft filled circle from absolute coordinates of center along the xy-plane
+	 * @param xCent - The x-coord of the center of the circle
+	 * @param yCent - The y-coord of the center of the circle
+	 * @param zCent - The z-coord of the center of the circle
+	 * @param radius - the radius of the circle
+	 * @param blockType - The type of block the circle should be made of
+	 */
+	public static void filCirAbsCoordXY(int xCent, int yCent, int zCent, int radius, String blockType) {
+		ArrayList<Point> coords = GenerateCircle.generateHollowCircle(xCent, yCent, radius);
+		
+		//Print the commands to the screen
+		for (int i = 0; i < coords.size(); i++) {
+			System.out.println("fill " + xCent + " " + yCent + " " + zCent + " " 
+					+ coords.get(i).x + " " + coords.get(i).y + " " + zCent + " minecraft:" + blockType + " replace minecraft:air");
 		}
 		
 	}
