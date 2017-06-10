@@ -14,8 +14,10 @@ public class main {
 		int yCoordCent = 150;
 		int radius = 11;
 		
-		testMineHollow(1007, 66, 790, 7, "wool 5");
-		testMineHollowCorners(1007, 66, 790, 7, "wool 6");
+		GenerateSphere s = new GenerateSphere(1007, 66, 790, 1, "stained_glass 3");
+		
+		//testMineHollow(1007, 66, 790, 7, "wool 5");
+		//testMineHollowCorners(1007, 66, 790, 7, "wool 6");
 //		ArrayList<Point3D> testWedge = GenerateSphere.generateHollowSphere(980, 65, 779, 5);
 //		for (int i = 0; i < testWedge.size(); i++) {
 //			System.out.println("setblock " + testWedge.get(i).x + " " + testWedge.get(i).y + " " + testWedge.get(i).z + " minecraft:wool 3");
