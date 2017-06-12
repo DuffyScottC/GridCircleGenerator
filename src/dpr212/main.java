@@ -27,10 +27,6 @@ public class main {
 //	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //	    frame.setVisible(true);
 	    
-	    //testMineHollow(999, 66, 738, 11, "wool 5");
-//		testMineHollow(959, 64, 732, 7, "wool 3");
-//		testMineFilled();
-//		testMinePlane(962,67,735, 3, "wool 3");
 	    
 	    
 	 }
